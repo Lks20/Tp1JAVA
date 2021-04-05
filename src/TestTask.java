@@ -29,7 +29,7 @@ public class TestTask {
                         case 1:
                             System.out.println("Ingrese el Nombre de la tarea");
                             String Nombre;
-                                Nombre=leer.nextLine();
+                               Nombre=leer.nextLine();
                             System.out.println("Ingrese la descripcion de la tarea");
                                 String Desc;
                                 Desc=leer.nextLine();
@@ -96,7 +96,7 @@ public class TestTask {
             break;
 
             case 2:
-             tarea1.mostrar();
+           
             break;
 
             case 3:
