@@ -1,118 +1,196 @@
 import java.util.Scanner;
-import java.util.Date;
+
+import java.time.LocalDate;
 
 public class TestTask {
     public static void main(String[] args) {
         Scanner leer = new Scanner(System.in);
         int opc;
-        int opc2;
+        int opc2=1;
+        int opc3=0;
         Task tarea1=null;
         Task tarea2=null;
         Task tarea3=null;
-
-        System.out.println("!Bienvenido al sistema de tareas¡");
-        System.out.println("Ingrese 1 para crear una nueva tarea o editar una ya creada");
-        System.out.println("Ingrese 2 para ver el estado de todas las tareas");
-        System.out.println("Ingrese 3 para eliminar una tarea");
-        opc= leer.nextInt();
-        leer.nextLine();
-        switch(opc){
-            case 1:
-                System.out.println("Selecione uno de los espacios para crear una tarea o editar");
-                System.out.println("Espacio 1");
-                System.out.println("Espacio 2");
-                System.out.println("Espacio 3");
-                opc2=leer.nextInt();
-                leer.nextLine();
-                    switch(opc2){
-                        
+        while(opc2!=0){ 
+             System.out.println("______________________________________________________");
+             System.out.println("!Bienvenido al sistema de tareas¡");
+             System.out.println("Ingrese 1 para crear una nueva tarea");
+             System.out.println("Ingrese 2 para marcar una tarea como Realizada");
+             System.out.println("Ingrese 3 para eliminar una tarea");
+             System.out.println("Ingrese 4 para ver una tarea");
+             System.out.println("Ingrese 0 para Salir de la Aplicacion");
+             System.out.println("______________________________________________________");
+             opc= leer.nextInt();
+             leer.nextLine();
+                switch(opc){
+                    case 0:
+                     System.out.println("Gracias por utilizar esta App");
+                     opc2=0;
+                     break;
+                     case 1:
+                     System.out.println("______________________________________________________");
+                     System.out.println("Ingrese el numero de la tarea");
+                     System.out.println("Tarea 1");
+                     System.out.println("Tarea 2");
+                     System.out.println("Tarea 3");
+                     System.out.println("______________________________________________________");
+                     opc3=leer.nextInt();
+                     leer.nextLine();
+                     switch(opc3){
                         case 1:
-                            System.out.println("Ingrese el Nombre de la tarea");
-                            String Nombre;
-                               Nombre=leer.nextLine();
-                            System.out.println("Ingrese la descripcion de la tarea");
-                                String Desc;
-                                Desc=leer.nextLine();
-                            System.out.println("Ingrese El estado de la tarea");
-                                Boolean est;
-                                est=leer.nextBoolean();
-                                leer.nextLine();
-                            System.out.println("Ingrese el dia,mes y año limite de la tarea");
-                                int dia;
-                                int mes;
-                                int año;
-                                dia=leer.nextInt();
-                                mes=leer.nextInt();
-                                año=leer.nextInt();
-                            tarea1=new Task(Nombre,Desc,est,new Date(año-1900,mes-1,dia));
-                            tarea1.mostrar();
-                        break;
+                         System.out.print("Ingrese la Descripcion -->");
+                         String desc1=leer.nextLine();
+                         System.out.println();
+                         System.out.print("El estado de la Tarea se aparecera como 'NO REALIZADA'");
+                         boolean est1=false;
+                         System.out.println();
+                         System.out.println("Ingrese la fecha en formato aaaa/mm/dd --> ");//LocalDate.of utiliza ese formato
+                         System.out.print("Año-> ");
+                         int año1=leer.nextInt();
+                         System.out.print("Mes-> ");
+                         int mes1=leer.nextInt();
+                         System.out.print("Dia-> ");
+                         int dia1=leer.nextInt();
+                         tarea1= new Task(desc1,est1,LocalDate.of(año1,mes1,dia1));
+                         break;
 
-                        case 2:
-                        System.out.println("Ingrese el Nombre de la tarea");
-                            String Nombre2;
-                                Nombre2=leer.nextLine();
-                            System.out.println("Ingrese la descripcion de la tarea");
-                                String Desc2;
-                                Desc2=leer.nextLine();
-                            System.out.println("Ingrese El estado de la tarea");
-                                Boolean est2;
-                                est2=leer.nextBoolean();
-                                leer.nextLine();
-                            System.out.println("Ingrese el dia,mes y año limite de la tarea");
-                                int dia2;
-                                int mes2;
-                                int año2;
-                                dia2=leer.nextInt();
-                                mes2=leer.nextInt();
-                                año2=leer.nextInt();
-                            tarea2=new Task(Nombre2,Desc2,est2,new Date(año2-1900,mes2-1,dia2));
-                            tarea2.mostrar();
-                        break;
+                         case 2:
+                         System.out.print("Ingrese la Descripcion -->");
+                         String desc2=leer.nextLine();
+                         System.out.println();
+                         System.out.print("El estado de la Tarea se aparecera como 'NO REALIZADA'");
+                         boolean est2=false;
+                         System.out.println();
+                         System.out.println("Ingrese la fecha en formato aaaa/mm/dd --> ");//LocalDate.of utiliza ese formato
+                         System.out.print("Año-> ");
+                         int año2=leer.nextInt();
+                         System.out.print("Mes-> ");
+                         int mes2=leer.nextInt();
+                         System.out.print("Dia-> ");
+                         int dia2=leer.nextInt();
+                         tarea2= new Task(desc2,est2,LocalDate.of(año2,mes2,dia2));
+                         break;
 
-                        case 3:
-                            System.out.println("Ingrese el Nombre de la tarea");
-                            String Nombre3;
-                                Nombre3=leer.nextLine();
-                            System.out.println("Ingrese la descripcion de la tarea");
-                            String Desc3;
-                                Desc3=leer.nextLine();
-                            System.out.println("Ingrese El estado de la tarea");
-                            Boolean est3;
-                                est3=leer.nextBoolean();
-                                leer.nextLine();
-                            System.out.println("Ingrese el dia,mes y año limite de la tarea");
-                                int dia3;
-                                int mes3;
-                                int año3;
-                                dia3=leer.nextInt();
-                                mes3=leer.nextInt();
-                                año3=leer.nextInt();
-                            tarea3=new Task(Nombre3,Desc3,est3,new Date(año3-1900,mes3-1,dia3));
-                            tarea3.mostrar();
-                        break;
+                         case 3:
+                         System.out.print("Ingrese la Descripcion -->");
+                         String desc3=leer.nextLine();
+                         System.out.println();
+                         System.out.print("El estado de la Tarea se aparecera como 'NO REALIZADA'");
+                         boolean est3=false;
+                         System.out.println();
+                         System.out.println("Ingrese la fecha en formato aaaa/mm/dd --> ");//LocalDate.of utiliza ese formato
+                         System.out.print("Año-> ");
+                         int año3=leer.nextInt();
+                         System.out.print("Mes-> ");
+                         int mes3=leer.nextInt();
+                         System.out.print("Dia-> ");
+                         int dia3=leer.nextInt();
+                         tarea3= new Task(desc3,est3,LocalDate.of(año3,mes3,dia3));
+                         break;
                     }
+                    break;
+                        
+                    case 2:
+                     System.out.println("Seleccione la tarea que desea marcar como realizada");
+                     System.out.println("Tarea 1");
+                     System.out.println("Tarea 2");
+                     System.out.println("Tarea 3");
+                         opc3=leer.nextInt();
+                         leer.nextLine(); 
+                        switch(opc3){
+                         case 1:
+                            if(tarea1 != null){
+                                tarea1.setEstado(true);
+                                System.out.println("!La tarea Fue Realizada¡");
+                                
+                            }    
+                         break;
 
-            break;
+                         case 2: 
+                         if(tarea2 != null){
+                            tarea2.setEstado(true);
+                            System.out.println("!La tarea Fue Realizada¡");
+                            
+                            }
+                         break;
 
-            case 2:
-           
-            break;
+                         case 3:
+                         if(tarea3 != null){
+                            tarea3.setEstado(true);
+                            System.out.println("!La tarea Fue Realizada¡");
+                            
+                        }
+                         break;
+                        } 
+                    break;
 
-            case 3:
-            break;
+                    case 3:
+                     System.out.println("Seleccione la tarea que desea Eliminar");
+                     System.out.println("Tarea 1");
+                     System.out.println("Tarea 2");
+                     System.out.println("Tarea 3");
+                     opc3=leer.nextInt();
+                     leer.nextLine();
+                     switch(opc3){
+                         case 1:
+                         if(tarea1 != null){
+                             tarea1=null;
+                             System.out.println("La tarea fue ELIMINADA");
+                         }
+                         break;
+                         case 2:
+                         if(tarea2 != null){
+                            tarea2=null;
+                            System.out.println("La tarea fue ELIMINADA");
+                        }
+                         break;
+                         case 3:
+                         if(tarea3 != null){
+                            tarea3=null;
+                            System.out.println("La tarea fue ELIMINADA");
+                        }
+                         break;
+                     } 
+                    break;
 
-            case 4:
-            break;
-
-
+                    case 4:
+                     System.out.println("Seleccione la tarea que desea ver");
+                     System.out.println("Tarea 1");
+                     System.out.println("Tarea 2");
+                     System.out.println("Tarea 3");
+                     opc3=leer.nextInt();
+                     leer.nextLine();
+                     switch(opc3){
+                         case 1:
+                         if(tarea1 != null){
+                             System.out.println(tarea1.toString());
+                         }
+                         else{
+                             System.out.println("La tarea 1 Esta VACIA");
+                         }
+                         break;
+                         case 2:
+                         if(tarea2 != null){
+                            System.out.println(tarea2.toString());
+                         }
+                         else{
+                            System.out.println("La tarea 2 Esta VACIA");
+                         }
+                         break;
+                         case 3:
+                         if(tarea3 != null){
+                            System.out.println(tarea3.toString());
+                         }
+                         else{
+                            System.out.println("La tarea 3 Esta VACIA");
+                         }
+                         break;
+                     }
+                    break;
+                    default:
+                     System.out.println("!!Lo ingresado No corresponde a ninguna de las opciones disponibles¡¡");
+                    break;
+             }
         }
-        
-        
-      
-
-
-
-
     }
 }

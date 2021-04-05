@@ -1,61 +1,100 @@
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Task {
     //atributos 
-    private String Nombre;
     private String descripcion; 
     private boolean estado; 
-    private Date vencimiento;
+    private LocalDate vencimiento;
+  
 
-    //constructor 
-    public Task (String Nombre,String descripcion, boolean estado, Date vencimiento){
-        this.Nombre=Nombre;
-        this.descripcion=descripcion;
-        this.estado=estado;
-        this.vencimiento=vencimiento;
+    //constructores 
+    public Task(String descripcion, boolean estado, LocalDate vencimiento) {
+        this.descripcion = descripcion;
+        this.estado = estado;
+        this.vencimiento = vencimiento;
     }
 
-    public Task (String descripcion){
-        this.Nombre=null;
-        this.descripcion=descripcion;
-        this.estado=false;
-        this.vencimiento=null;
+
+    public Task(boolean estado, LocalDate vencimiento) {
+        this.estado = estado;
+        this.vencimiento = vencimiento;
     }
+
+
+    public Task(String descripcion, LocalDate vencimiento) {
+        this.descripcion = descripcion;
+        this.vencimiento = vencimiento;
+    }
+
+
+    public Task(String descripcion, boolean estado) {
+        this.descripcion = descripcion;
+        this.estado = estado;
+    }
+
+
+    public Task(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+
+    public Task(boolean estado) {
+        this.estado = estado;
+    }
+
+
+    public Task(LocalDate vencimiento) {
+        this.vencimiento = vencimiento;
+    }
+
+//Gest y Sets
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+
+    public boolean isEstado() {
+        return estado;
+    }
+    public void setEstado(boolean estado) {
+        this.estado = estado;
+    }
+
+
+    public LocalDate getVencimiento() {
+        return vencimiento;
+    }
+    public void setVencimiento(LocalDate vencimiento) {
+        this.vencimiento = vencimiento;
+    }
+
+/**
+ * Obtiene un String con los valores del objeto
+ * @return El objeto en formato String
+ */
+    @Override//El profe lo va a explicar mas adelante
+    public String toString() {
+        return "Tarea, descripcion: " + descripcion + ", estado: " + estado + ", vencimiento: " + vencimiento ;
+    }
+
     
-    //funcion 
-    void mostrar (){
-        System.out.println("Nombre: "+Nombre);
-        System.out.println("Descripcion: "+descripcion);
-        System.out.println("Estado: "+estado);
-        System.out.println("Vencimiento: "+vencimiento);
-    }
 
-    //Gets y Sets 
-    String GetNombre(){
-        return this.Nombre;
-    }
-    void SetNombre(String Nombre){
-        this.Nombre=Nombre;
-    }
+    
 
-    String GetDescripcion(){
-        return this.descripcion;
-    }
-    void SetDescripcion(String descripcion){
-        this.descripcion=descripcion;
-    }
 
-    boolean GetEstado(){
-        return this.estado;
-    }
-    void SetEstado(boolean estado){
-        this.estado=estado;
-    }
 
-    Date Getvencimiento(){
-        return this.vencimiento;
-    }
-    void Setvencimiento(Date vencimiento){
-        this.vencimiento=vencimiento;
-    }
+
+
+    
 }
+    
+
+
+
+
+
+  
